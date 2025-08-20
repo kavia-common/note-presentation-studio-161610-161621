@@ -1,54 +1,56 @@
-# Remotion video
+# Notes Presentation Studio (Remotion)
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.gif">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+A modern, minimalistic, light-themed web app to create video presentations from notes using Remotion.
 
-Welcome to your Remotion project!
+- Accent: #FFD700
+- Primary: #2D89EF
+- Secondary: #5A5A5A
 
-## Commands
+## Features
 
-**Install Dependencies**
+- Import notes (JSON array or Markdown with headings)
+- Edit note title and content
+- Create slides from notes
+- Customize slide style (background, text, accent colors; alignment; duration)
+- Live video preview (Remotion Player)
+- Export/download video (open Remotion Studio render UI)
 
-```console
+## Layout
+
+- Sidebar: notes list with add/import
+- Main: left panel with note editor and slides list, right panel with player preview
+- Toolbar: render settings and slide style controls, export button
+
+## Getting started
+
+Install dependencies:
+
+```bash
 npm i
 ```
 
-**Start Preview**
+Run in Remotion Studio:
 
-```console
+```bash
 npm run dev
 ```
 
-**Render video**
+Render from CLI (example):
 
-```console
-npx remotion render
+```bash
+# Build/bundle or use Studio UI to render
+npx remotion render src/index.ts AppProject out/video.mp4
 ```
 
-**Upgrade Remotion**
+Notes:
+- The in-app "Export Video" button opens the Remotion Studio window prepped for export.
+- You can also render via CLI by supplying props or by adapting the composition to serialize state.
 
-```console
-npx remotion upgrade
-```
+## Import format
 
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+- JSON: `[{"title":"...", "content":"..."}, ...]`
+- Markdown / Text: Headings (`#`, `##`, or `###`) split notes; first line is title, remaining lines are content.
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+The app uses Remotion. For licensing, see https://github.com/remotion-dev/remotion/blob/main/LICENSE.md
